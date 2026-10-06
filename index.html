@@ -1,726 +1,146 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMAT - Compare & Save Up to 30% on Car & Motorcycle Insurance</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        gmat: {
-                            navy: '#0F172A',
-                            blue: '#1E3A8A',
-                            accent: '#0284C7',
-                            emerald: '#10B981',
-                            amber: '#F59E0B',
-                            light: '#F8FAFC'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #0284C7 100%);
-        }
-        .gold-gradient {
-            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-        }
-        .emerald-gradient {
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        .version-badge {
-            transition: all 0.3s ease;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Thank you | GMAT</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!--
+  GMAT CONFIRMATION EMAIL v5 (sent automatically after the landing page form is submitted)
+
+  SUBJECT (pick one to test):
+    A: Thanks {{first_name}}! Share your vehicle details to get started
+    B: {{first_name}}, your insurance comparison is one step away
+
+  MERGE FIELDS: {{first_name}}, {{unsubscribe_url}}
+  ALL GMAT LINKS (logo, Car button, Motorcycle button) carry the GMAT affiliate ref code (ref=34ae4118bd504e00a37d425d0b4f4e60).
+  To use a different ref code for email traffic, find and replace that code in this file (3 places). No utm tags added.
+  Reply-To must be a monitored CS mailbox. Add a response-time promise only once CS confirms what it can keep.
+-->
+<style>
+  body{margin:0;padding:0;background:#E9F0EC;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+  table{border-collapse:separate}
+  img{border:0;display:block;outline:none;text-decoration:none}
+  a{color:#067A58}
+  .hd{font-family:'Poppins','Segoe UI','Trebuchet MS',Helvetica,Arial,sans-serif}
+  .bd{font-family:'Inter','Segoe UI',Helvetica,Arial,sans-serif}
+  @media only screen and (max-width:620px){
+    .wrap{width:100%!important}
+    .px{padding-left:22px!important;padding-right:22px!important}
+    .h1{font-size:28px!important;line-height:36px!important}
+    .stack{display:block!important;width:100%!important}
+    .gap{display:block!important;width:100%!important;height:12px!important}
+  }
+</style>
 </head>
-<body class="font-sans bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+<body style="margin:0;padding:0;background:#E9F0EC;">
+
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
+  Share your vehicle details, compare quotes from leading insurers, and let GMAT look after your renewal.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#E9F0EC;">
+<tr><td align="center" style="padding:28px 12px;">
+
+  <table role="presentation" class="wrap" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;">
+
+    <!-- Logo bar -->
+    <tr><td class="px" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:20px 20px 0 0;padding:24px 40px 20px 40px;">
+      <a href="https://gmat.com.my/?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" style="text-decoration:none;">
+        <img src="https://d9p96y8yn87dz.cloudfront.net/GMATImages/Logo/GMATTransparent.png" alt="GMAT" width="150" style="width:150px;height:auto;margin:0 auto;font:700 22px Arial,Helvetica,sans-serif;color:#063F2B;">
+      </a>
+    </td></tr>
+
+    <!-- Poster (replaces the green hero band) -->
+    <tr><td bgcolor="#063F2B" style="background:#063F2B;padding:0;line-height:0;font-size:0;">
+      <img src="https://www.image2url.com/r2/default/images/1791200793805-33ab8bc5-8a7f-431b-a7d3-4c8f4ea51dd8.png" width="600" alt="Save up to 30% on car and motorcycle insurance. Renew with GMAT and get a RM30 eWallet PIN or fuel voucher. Monthly lucky draw. Terms and conditions apply." style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+    </td></tr>
+
+    <!-- CTA card -->
+    <tr><td class="px" bgcolor="#FFFFFF" style="background:#FFFFFF;padding:34px 40px 8px 40px;">
+      <p class="bd" style="margin:0 0 8px 0;font-size:15px;line-height:23px;color:#4A5C55;">Thank you, <strong style="color:#0F2A22;">{{first_name}}</strong>! We've received your request.</p>
+      <p class="hd" style="margin:0;font-size:22px;line-height:30px;font-weight:700;color:#0F2A22;">Share your vehicle details</p>
+      <p class="bd" style="margin:6px 0 20px 0;font-size:15px;line-height:23px;color:#4A5C55;">Choose your vehicle to get started.</p>
+
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="stack" width="49%" valign="top">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+              <td align="center" bgcolor="#067A58" style="border-radius:14px;">
+                <a href="https://gmat.com.my/vehicle-insurance/home?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" class="hd" style="display:block;padding:18px 12px;font-size:16px;line-height:20px;font-weight:600;color:#FFFFFF;text-decoration:none;border-radius:14px;">Car insurance &rarr;</a>
+              </td></tr></table>
+          </td>
+          <td class="gap" width="2%" style="font-size:0;line-height:0;">&nbsp;</td>
+          <td class="stack" width="49%" valign="top">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+              <td align="center" bgcolor="#FFC93C" style="border-radius:14px;">
+                <a href="https://gmat.com.my/motor-cycle/home?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" class="hd" style="display:block;padding:18px 12px;font-size:16px;line-height:20px;font-weight:600;color:#1B2B25;text-decoration:none;border-radius:14px;">Motorcycle insurance &rarr;</a>
+              </td></tr></table>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+
+    <!-- Steps -->
+    <tr><td class="px" bgcolor="#FFFFFF" style="background:#FFFFFF;padding:34px 40px 8px 40px;">
+      <p class="hd" style="margin:0 0 18px 0;font-size:20px;line-height:28px;font-weight:700;color:#0F2A22;">How it works</p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="48" valign="top" style="padding:0 0 18px 0;"><div class="hd" style="width:36px;height:36px;line-height:36px;border-radius:18px;background:#E3F4EB;color:#067A58;text-align:center;font-size:16px;font-weight:700;">1</div></td>
+          <td valign="top" class="bd" style="padding:0 0 18px 0;">
+            <p class="hd" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#0F2A22;">Enter your vehicle details</p>
+            <p style="margin:2px 0 0 0;font-size:14px;line-height:22px;color:#4A5C55;">Fill in your details on our car or motorcycle page.</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="48" valign="top" style="padding:0 0 18px 0;"><div class="hd" style="width:36px;height:36px;line-height:36px;border-radius:18px;background:#E3F4EB;color:#067A58;text-align:center;font-size:16px;font-weight:700;">2</div></td>
+          <td valign="top" class="bd" style="padding:0 0 18px 0;">
+            <p class="hd" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#0F2A22;">Compare your quotes</p>
+            <p style="margin:2px 0 0 0;font-size:14px;line-height:22px;color:#4A5C55;">See prices from leading insurers and pick the cover that suits you.</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="48" valign="top" style="padding:0;"><div class="hd" style="width:36px;height:36px;line-height:36px;border-radius:18px;background:#E3F4EB;color:#067A58;text-align:center;font-size:16px;font-weight:700;">3</div></td>
+          <td valign="top" class="bd" style="padding:0;">
+            <p class="hd" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#0F2A22;">We look after your renewal</p>
+            <p style="margin:2px 0 0 0;font-size:14px;line-height:22px;color:#4A5C55;">GMAT will follow up and remind you when your policy is due, so you never miss it.</p>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+
+    <!-- Rewards -->
+    <tr><td class="px" bgcolor="#FFFFFF" style="background:#FFFFFF;padding:30px 40px 6px 40px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td bgcolor="#FFF4D6" style="background:#FFF4D6;border-radius:16px;padding:20px 22px;">
+          <p class="hd" style="margin:0 0 8px 0;font-size:16px;line-height:24px;font-weight:700;color:#5A3E00;">Renew with GMAT and get rewarded</p>
+          <p class="bd" style="margin:0;font-size:14px;line-height:23px;color:#5A4A1F;">&#8226;&nbsp; <strong>RM30 eWallet PIN or fuel voucher</strong> when you renew with us*<br>&#8226;&nbsp; Eligible customers are entered into our <strong>monthly lucky draw</strong>*</p>
+          <p class="bd" style="margin:10px 0 0 0;font-size:12px;line-height:18px;color:#7A6A3A;">*Terms and conditions apply. <a href="https://gmat.com.my/terms" target="_blank" style="color:#7A5A00;">Read the T&amp;C</a></p>
+        </td></tr>
+      </table>
+    </td></tr>
+
+    <!-- Sign-off -->
+    <tr><td class="px bd" bgcolor="#FFFFFF" style="background:#FFFFFF;padding:28px 40px 34px 40px;border-radius:0 0 20px 20px;">
+      <p style="margin:0;font-size:15px;line-height:24px;color:#33463F;">Have a question? Simply reply to this email or write to <a href="mailto:gcare@gmat.com.my" style="color:#067A58;font-weight:600;text-decoration:none;">gcare@gmat.com.my</a> and our team will help.</p>
+      <p style="margin:14px 0 0 0;font-size:15px;line-height:24px;color:#33463F;">Thank you for choosing GMAT,<br><strong class="hd" style="font-weight:600;color:#0F2A22;">Team GMAT</strong></p>
+    </td></tr>
+
+    <!-- Footer -->
+    <tr><td class="px bd" align="center" style="padding:22px 30px 6px 30px;font-size:12px;line-height:19px;color:#6A7A74;">
+      You received this email because you requested an insurance quote at gmat.com.my.<br>
+      <a href="https://gmat.com.my/privacy" target="_blank" style="color:#6A7A74;">Privacy Policy</a> &nbsp;|&nbsp;
+      <a href="https://gmat.com.my/terms" target="_blank" style="color:#6A7A74;">Terms &amp; Conditions</a> &nbsp;|&nbsp;
+      <a href="{{unsubscribe_url}}" target="_blank" style="color:#6A7A74;">Unsubscribe</a><br>
+      <span style="display:block;margin-top:8px;">&copy; 2026 GMAT Insurtech. All rights reserved.</span>
+    </td></tr>
 
-    <!-- DEMO ADMIN VERSION SWITCHER BAR (TOP FIXED) -->
-    <div class="bg-slate-900 text-white text-xs py-2.5 px-4 sticky top-0 z-50 border-b border-slate-700 shadow-md">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center space-x-2">
-                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-amber-500 text-slate-950">
-                    <i class="fa-solid fa-sliders mr-1.5"> { DEMO TOOL }</i>
-                </span>
-                <span class="font-medium text-slate-300 hidden md:inline">Select Landing Page Conversion Strategy:</span>
-            </div>
-            
-            <div class="flex items-center bg-slate-800 p-1 rounded-lg border border-slate-700">
-                <button id="btnVersionB" onclick="switchVersion('B')" class="version-badge px-3 py-1.5 rounded-md text-xs font-semibold flex items-center bg-emerald-500 text-white shadow-sm">
-                    <i class="fa-solid fa-shield-halved mr-1.5"></i> Version B: Full Form (Vehicle No + NRIC)
-                </button>
-                <button id="btnVersionA" onclick="switchVersion('A')" class="version-badge px-3 py-1.5 rounded-md text-xs font-semibold flex items-center text-slate-400 hover:text-white">
-                    <i class="fa-solid fa-bolt mr-1.5"></i> Version A: Simplified (Name, Mobile, Email)
-                </button>
-            </div>
+  </table>
 
-            <div class="hidden lg:flex items-center space-x-3 text-slate-400 text-xs">
-                <span><i class="fa-solid fa-circle text-emerald-400 text-[8px] mr-1"></i> Active Status: <strong id="versionStatusText" class="text-emerald-400 font-semibold">Direct Channeling (High Intent)</strong></span>
-            </div>
-        </div>
-    </div>
-
-    <!-- HEADER -->
-    <header class="bg-white border-b border-slate-200 sticky top-[41px] z-40 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="https://gmat.com.my/" target="_blank" class="flex items-center group">
-                <img src="https://d9p96y8yn87dz.cloudfront.net/GMATImages/Logo/GMATTransparent.png" alt="GMAT.my Logo" class="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform" />
-            </a>
-
-            <!-- Header Quick Badges / CTAs -->
-            <div class="flex items-center space-x-4 sm:space-x-6">
-                <div class="hidden md:flex items-center space-x-4 text-xs font-medium text-slate-600">
-                    <div class="flex items-center text-slate-700">
-                        <i class="fa-solid fa-shield-heart text-emerald-500 text-base mr-1.5"></i>
-                        <span>Licensed Panel Agents</span>
-                    </div>
-                    <div class="flex items-center text-slate-700">
-                        <i class="fa-solid fa-bolt text-amber-500 text-base mr-1.5"></i>
-                        <span>1-Min Instant Quotes</span>
-                    </div>
-                </div>
-
-                <a href="https://wa.me/60123456789?text=Hi%20GMAT,%20I%20want%20a%20free%20quote%20for%20my%20vehicle" target="_blank" class="inline-flex items-center px-4 py-2 rounded-lg text-sm font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition-colors shadow-sm">
-                    <i class="fa-brands fa-whatsapp text-emerald-600 text-lg mr-2"></i>
-                    <span class="hidden sm:inline">CS Instant Assistance</span>
-                    <span class="sm:hidden">WhatsApp</span>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="gradient-bg text-white relative overflow-hidden py-12 lg:py-16">
-        <!-- Decorative Background Patterns -->
-        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                
-                <!-- Hero Left: Value Proposition Column -->
-                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-amber-400/20 border border-amber-400/30 text-amber-300 text-xs font-semibold backdrop-blur-sm">
-                        <i class="fa-solid fa-trophy"></i>
-                        <span>Malaysia's Smart Vehicle Insurance Platform</span>
-                    </div>
-
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-                        Compare Top Insurers & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">Save Up to 30%</span> On Renewal
-                    </h1>
-
-                    <p class="text-slate-200 text-base sm:text-lg font-normal max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                        Get direct rates from Etiqa, Allianz, Zurich, Takaful Malaysia & more. Instant JPJ NCD verification with personalized coverage advice.
-                    </p>
-
-                    <!-- Incentives & Perks Banner Bar -->
-                    <div class="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
-                        <div class="bg-white/10 border border-white/10 rounded-xl p-3 flex items-center space-x-3 backdrop-blur-md">
-                            <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold shrink-0">
-                                <i class="fa-solid fa-percent text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-bold text-white">Up to 30% Savings</h4>
-                                <p class="text-[11px] text-slate-300">Quote comparison</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-white/10 border border-white/10 rounded-xl p-3 flex items-center space-x-3 backdrop-blur-md">
-                            <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold shrink-0">
-                                <i class="fa-solid fa-wallet text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-bold text-white">Touch 'n Go Vouchers</h4>
-                                <p class="text-[11px] text-slate-300">RM10-30 Reload Pin</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-white/10 border border-white/10 rounded-xl p-3 flex items-center space-x-3 backdrop-blur-md">
-                            <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold shrink-0">
-                                <i class="fa-solid fa-gas-pump text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-bold text-white">Petronas Fuel Cards</h4>
-                                <p class="text-[11px] text-slate-300">Monthly Lucky Draw</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Trust Stats Bar -->
-                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 border-t border-white/10 text-xs text-slate-300">
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check-circle text-emerald-400"></i>
-                            <span>100% Free Quote</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check-circle text-emerald-400"></i>
-                            <span>Instant JPJ Roadtax Renewal</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-shield text-emerald-400"></i>
-                            <span>PDPA Data Safe</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Right: Dynamic Interactive Form Container -->
-                <div class="lg:col-span-6">
-                    <div class="glass-card rounded-2xl shadow-2xl p-6 sm:p-8 text-slate-900 border border-white/20 relative">
-                        
-                        <!-- Form Header -->
-                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-                            <div>
-                                <h3 class="text-xl font-black text-slate-900">Get Instant Savings Estimate</h3>
-                                <p class="text-xs text-slate-500 font-medium mt-0.5">Fill details below to lock in discount & enter lucky draw</p>
-                            </div>
-                            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200 shadow-sm flex items-center">
-                                <i class="fa-solid fa-gift mr-1.5 text-amber-600"></i> Lucky Draw Entry
-                            </span>
-                        </div>
-
-                        <!-- Vehicle Type Selector Tabs -->
-                        <div class="grid grid-cols-2 gap-2 p-1 bg-slate-100 rounded-xl mb-6">
-                            <button type="button" id="tabCar" onclick="setVehicleType('car')" class="py-2.5 px-4 rounded-lg text-xs font-bold flex items-center justify-center space-x-2 transition-all bg-white text-gmat-blue shadow-sm">
-                                <i class="fa-solid fa-car text-base"></i>
-                                <span>Car Insurance</span>
-                            </button>
-                            <button type="button" id="tabMotor" onclick="setVehicleType('motorcycle')" class="py-2.5 px-4 rounded-lg text-xs font-bold flex items-center justify-center space-x-2 transition-all text-slate-600 hover:text-slate-900">
-                                <i class="fa-solid fa-motorcycle text-base"></i>
-                                <span>Motorcycle Insurance</span>
-                            </button>
-                        </div>
-
-                        <!-- Dynamic Estimate Visual Bar -->
-                        <div class="mb-6 p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
-                            <div class="flex items-center space-x-2">
-                                <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">
-                                    <i class="fa-solid fa-calculator"></i>
-                                </div>
-                                <div>
-                                    <div class="text-[11px] font-semibold text-emerald-800">Estimated Instant Savings</div>
-                                    <div class="text-xs font-bold text-emerald-900" id="savingsEstimateText">Calculated upon vehicle input</div>
-                                </div>
-                            </div>
-                            <span id="savingsBadge" class="text-xs font-extrabold text-emerald-700 bg-emerald-200/60 px-2 py-1 rounded">30% Max OFF</span>
-                        </div>
-
-                        <!-- MAIN FORM -->
-                        <form id="gmatLeadForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-                            <input type="hidden" id="vehicleTypeInput" name="vehicle_type" value="car">
-
-                            <!-- Common Field: Full Name -->
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                                    Full Name <span class="text-red-500">*</span>
-                                </label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-                                        <i class="fa-solid fa-user"></i>
-                                    </span>
-                                    <input type="text" id="fullName" required placeholder="e.g. Ahmad Bin Razak" 
-                                        class="w-full pl-10 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gmat-accent focus:bg-white transition-all">
-                                </div>
-                            </div>
-
-                            <!-- Common Field: Mobile Number -->
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                                    Mobile Number (WhatsApp) <span class="text-red-500">*</span>
-                                </label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 font-semibold text-xs">
-                                        +60
-                                    </span>
-                                    <input type="tel" id="mobileNumber" required placeholder="12 345 6789" 
-                                        class="w-full pl-12 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gmat-accent focus:bg-white transition-all">
-                                </div>
-                                <p class="text-[11px] text-slate-400 mt-1">Quotes and TNG vouchers will be sent directly to WhatsApp.</p>
-                            </div>
-
-                            <!-- Common Field: Email -->
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                                    Email Address <span class="text-red-500">*</span>
-                                </label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-                                        <i class="fa-solid fa-envelope"></i>
-                                    </span>
-                                    <input type="email" id="emailAddress" required placeholder="ahmad@example.com" 
-                                        class="w-full pl-10 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gmat-accent focus:bg-white transition-all">
-                                </div>
-                            </div>
-
-                            <!-- VERSION B SPECIFIC FIELDS (VEHICLE NO & IC) -->
-                            <div id="versionBFields" class="space-y-4 pt-1 border-t border-dashed border-slate-200">
-                                
-                                <!-- Vehicle Number -->
-                                <div>
-                                    <div class="flex justify-between items-center mb-1">
-                                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
-                                            Vehicle Registration No. <span class="text-red-500">*</span>
-                                        </label>
-                                        <span class="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">For Instant JPJ Quote</span>
-                                    </div>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-                                            <i class="fa-solid fa-car-side"></i>
-                                        </span>
-                                        <input type="text" id="vehicleNumber" placeholder="e.g. WYY 1234 or VAA 888" oninput="calculateSavingsPreview()" 
-                                            class="w-full pl-10 pr-3 py-2.5 text-sm bg-amber-50/40 border border-amber-300 rounded-lg uppercase focus:outline-none focus:ring-2 focus:ring-gmat-accent focus:bg-white transition-all font-bold tracking-wider text-slate-800">
-                                    </div>
-                                </div>
-
-                                <!-- IC / NRIC Field -->
-                                <div>
-                                    <div class="flex justify-between items-center mb-1">
-                                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
-                                            NRIC / IC Number <span class="text-red-500">*</span>
-                                        </label>
-                                        <span class="text-[10px] text-slate-500 font-medium"><i class="fa-solid fa-lock text-slate-400"></i> Encrypted</span>
-                                    </div>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-                                            <i class="fa-solid fa-id-card"></i>
-                                        </span>
-                                        <input type="text" id="nricNumber" maxlength="14" placeholder="e.g. 900101145555" 
-                                            class="w-full pl-10 pr-3 py-2.5 text-sm bg-amber-50/40 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gmat-accent focus:bg-white transition-all font-mono">
-                                    </div>
-                                    
-                                    <!-- Sensitive Data Safety & Purpose Helper Box -->
-                                    <div class="mt-2 p-2.5 bg-blue-50/70 border border-blue-200/60 rounded-lg flex items-start space-x-2 text-[11px] text-blue-900">
-                                        <i class="fa-solid fa-shield-halved text-blue-600 mt-0.5 shrink-0"></i>
-                                        <span><strong>Why NRIC is required:</strong> Needed securely by JPJ and panel insurers to instantly look up your accurate NCD (No Claim Discount) entitlement and calculate your exact 30% savings.</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- PDPA & Newsletter Acknowledgements (Requirement #7) -->
-                            <div class="space-y-2 pt-2 text-xs text-slate-600">
-                                <label class="flex items-start space-x-2.5 cursor-pointer">
-                                    <input type="checkbox" id="newsletterConsent" checked class="mt-0.5 rounded text-gmat-blue focus:ring-gmat-accent w-4 h-4">
-                                    <span class="leading-tight">
-                                        Send me regular renewal reminders, exclusive discounts & monthly Touch 'n Go / Petronas lucky draw updates via WhatsApp/Email.
-                                    </span>
-                                </label>
-
-                                <label class="flex items-start space-x-2.5 cursor-pointer">
-                                    <input type="checkbox" id="pdpaConsent" required checked class="mt-0.5 rounded text-gmat-blue focus:ring-gmat-accent w-4 h-4">
-                                    <span class="leading-tight text-slate-500">
-                                        I acknowledge and agree to GMAT's <a href="#" class="underline text-gmat-blue">PDPA Privacy Policy</a>. Your personal details are strictly safeguarded and encrypted under Malaysian law.
-                                    </span>
-                                </label>
-                            </div>
-
-                            <!-- SUBMIT BUTTON -->
-                            <button type="submit" id="btnSubmitForm" class="w-full py-3.5 px-6 rounded-xl font-black text-sm text-white emerald-gradient hover:opacity-95 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center space-x-2 transform active:scale-95">
-                                <span>GET MY 30% SAVINGS QUOTE + ENTER DRAW</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-
-                            <div class="text-center text-[11px] text-slate-400 font-medium">
-                                <i class="fa-solid fa-lock text-emerald-500 mr-1"></i> 256-Bit SSL Encrypted | Official Panel Authorization
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 6A: MULTIPLE INSURERS GRID SECTION -->
-    <section class="py-12 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-block px-3 py-1 bg-slate-100 rounded-full text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">
-                Official Panel Insurers & Takaful
-            </div>
-            <h2 class="text-2xl font-black text-slate-900 mb-2">We Compare Multiple Insurers For You</h2>
-            <p class="text-sm text-slate-500 max-w-2xl mx-auto mb-8">Get direct rate comparisons from Malaysia's top rated insurance and takaful providers instantly.</p>
-
-            <!-- Insurer Logos Grid -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 items-center">
-                
-                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-slate-300 hover:shadow-sm transition-all flex flex-col items-center justify-center h-20">
-                    <span class="font-extrabold text-slate-800 text-lg tracking-tight">etiqa</span>
-                    <span class="text-[9px] text-slate-400 uppercase font-semibold">Insurance & Takaful</span>
-                </div>
-
-                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-slate-300 hover:shadow-sm transition-all flex flex-col items-center justify-center h-20">
-                    <span class="font-black text-blue-900 text-lg tracking-tighter">Allianz <i class="fa-solid fa-dharmachakra text-blue-600 text-xs"></i></span>
-                    <span class="text-[9px] text-slate-400 uppercase font-semibold">General Insurance</span>
-                </div>
-
-                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-slate-300 hover:shadow-sm transition-all flex flex-col items-center justify-center h-20">
-                    <span class="font-bold text-blue-700 text-lg tracking-wider">ZURICH</span>
-                    <span class="text-[9px] text-slate-400 uppercase font-semibold">Insurance & Takaful</span>
-                </div>
-
-                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-slate-300 hover:shadow-sm transition-all flex flex-col items-center justify-center h-20">
-                    <span class="font-black text-red-600 text-base tracking-tight">TAKAFUL</span>
-                    <span class="text-[9px] text-slate-400 uppercase font-semibold">Malaysia</span>
-                </div>
-
-                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-slate-300 hover:shadow-sm transition-all flex flex-col items-center justify-center h-20">
-                    <span class="font-black text-slate-800 text-lg tracking-tight">GENERALI</span>
-                    <span class="text-[9px] text-slate-400 uppercase font-semibold">Malaysia</span>
-                </div>
-
-                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-slate-300 hover:shadow-sm transition-all flex flex-col items-center justify-center h-20">
-                    <span class="font-bold text-slate-700 text-lg tracking-widest">MSIG</span>
-                    <span class="text-[9px] text-slate-400 uppercase font-semibold">Insurance</span>
-                </div>
-
-                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-slate-300 hover:shadow-sm transition-all flex flex-col items-center justify-center h-20 col-span-2 sm:col-span-1">
-                    <span class="font-black text-orange-500 text-base">tune<span class="text-slate-800">protect</span></span>
-                    <span class="text-[9px] text-slate-400 uppercase font-semibold">Motor Insurance</span>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 6B: PAYMENT CHANNELS GRID SECTION -->
-    <section class="py-12 bg-slate-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-block px-3 py-1 bg-blue-100 rounded-full text-xs font-bold text-blue-700 uppercase tracking-wider mb-2">
-                Flexible & Instant Payment
-            </div>
-            <h2 class="text-2xl font-black text-slate-900 mb-2">Supported Payment Gateways & E-Wallets</h2>
-            <p class="text-sm text-slate-500 max-w-2xl mx-auto mb-8">Pay securely using your preferred online banking, credit/debit card, or e-wallet channel.</p>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 items-center">
-                <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-center h-16 shadow-sm">
-                    <span class="font-black text-slate-800 text-base"><i class="fa-solid fa-building-columns text-blue-600 mr-1.5"></i> FPX</span>
-                </div>
-                <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-center h-16 shadow-sm">
-                    <span class="font-bold text-blue-600 text-sm"><i class="fa-solid fa-wallet text-blue-500 mr-1.5"></i> Touch 'n Go</span>
-                </div>
-                <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-center h-16 shadow-sm">
-                    <span class="font-bold text-emerald-600 text-sm"><i class="fa-solid fa-mobile-screen mr-1.5"></i> GrabPay</span>
-                </div>
-                <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-center h-16 shadow-sm">
-                    <span class="font-black text-blue-900 text-lg tracking-wider">VISA</span>
-                </div>
-                <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-center h-16 shadow-sm">
-                    <span class="font-extrabold text-amber-600 text-base"><i class="fa-brands fa-cc-mastercard text-red-500 mr-1"></i> Mastercard</span>
-                </div>
-                <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-center h-16 shadow-sm">
-                    <span class="font-bold text-amber-500 text-sm">Maybank2u</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTION: WHY CHOOSE GMAT -->
-    <section class="py-16 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-black text-slate-900 tracking-tight">Why Renew Vehicle Insurance With GMAT?</h2>
-                <p class="text-slate-600 text-sm mt-2">More than just quote comparison — our dedicated customer support team protects your vehicle every step of the way.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Service 1: Claims Assistance -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:shadow-lg transition-all relative group">
-                    <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl font-bold mb-4 shadow-md shadow-blue-500/20 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Dedicated Claims Assistance</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        In the event of an accident or breakdown, our CS team will guide you through towing, police report submission, panel workshop allocation, and claim filing hassle-free.
-                    </p>
-                </div>
-
-                <!-- Service 2: Tailored Advice (Agreed Value vs Market Value) -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:shadow-lg transition-all relative group">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl font-bold mb-4 shadow-md shadow-emerald-500/20 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-user-shield"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Tailored Vehicle Coverage Advice</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        We don't just sell policies — our CS advisors evaluate your vehicle's age and usage to recommend optimal coverage options (such as Agreed Value vs. Market Value, Windscreen, and Special Perils).
-                    </p>
-                </div>
-
-                <!-- Service 3: Annual Renewal Follow-ups -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:shadow-lg transition-all relative group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center text-xl font-bold mb-4 shadow-md shadow-amber-500/20 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-bell"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Automated Renewal Reminders</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Never risk driving with expired roadtax or insurance. We keep track of your expiry dates and notify you 30 days ahead with updated savings quotes.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- REWARDS & INCENTIVE PROMO BANNER -->
-    <section class="py-12 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-r from-amber-500/20 to-emerald-500/20 rounded-2xl p-8 border border-amber-500/30 flex flex-col lg:flex-row items-center justify-between gap-6">
-                
-                <div class="space-y-2 text-center lg:text-left">
-                    <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold bg-amber-400 text-slate-950 uppercase tracking-wider">
-                        <i class="fa-solid fa-gift mr-1"></i> Exclusive Customer Perks
-                    </span>
-                    <h3 class="text-2xl font-black text-white">Get Up to RM30 Touch 'n Go + Monthly Lucky Draw Entry</h3>
-                    <p class="text-xs text-slate-300 max-w-xl">
-                        Submit your vehicle details today to claim an instant Touch 'n Go eWallet reload pin and get automatically entered into our RM500 Petronas Fuel Card monthly giveaway!
-                    </p>
-                </div>
-
-                <a href="#gmatLeadForm" class="px-6 py-3.5 rounded-xl text-sm font-black text-slate-950 bg-amber-400 hover:bg-amber-300 transition-colors shadow-lg shadow-amber-500/20 shrink-0 flex items-center space-x-2">
-                    <span>CLAIM PERKS NOW</span>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- PDPA TRUST & PRIVACY GUARANTEE SECTION -->
-    <section class="py-12 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="w-12 h-12 rounded-full bg-slate-200 text-slate-700 mx-auto flex items-center justify-center text-xl mb-3">
-                <i class="fa-solid fa-user-lock"></i>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Your Personal Data Belongs To You</h3>
-            <p class="text-xs text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                GMAT complies strictly with the Malaysian Personal Data Protection Act (PDPA 2010). We collect NRIC and Vehicle registration numbers solely to perform official NCD lookups and generate accurate insurance quotations. Your information is encrypted and will never be shared with unauthorized third parties.
-            </p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 text-xs py-10 border-t border-slate-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-800 pb-6">
-                <a href="https://gmat.com.my/" target="_blank" class="flex items-center group">
-                    <img src="https://d9p96y8yn87dz.cloudfront.net/GMATImages/Logo/GMATTransparent.png" alt="GMAT.my Logo" class="h-8 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" />
-                </a>
-
-                <div class="flex flex-wrap justify-center gap-6 text-slate-400 font-medium">
-                    <a href="https://gmat.com.my/" target="_blank" class="hover:text-white transition-colors">Official Site</a>
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-white transition-colors">PDPA Notice</a>
-                    <a href="#" class="hover:text-white transition-colors">Contact Us</a>
-                </div>
-            </div>
-
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-                <p>© 2026 GMAT Insurance Platform. All rights reserved.</p>
-                <p>Designed for optimized sales prospect generation & direct product channeling.</p>
-            </div>
-
-        </div>
-    </footer>
-
-    <!-- DEVELOPER SUBMISSION PREVIEW MODAL (Demonstrates Backend Payload & Deduplication Logic) -->
-    <div id="devModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full p-6 text-white shadow-2xl relative overflow-hidden">
-            
-            <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
-                <div class="flex items-center space-x-2">
-                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500 text-slate-950">200 OK</span>
-                    <h3 class="text-base font-bold text-white">Lead Data Submission Logged (Dev View)</h3>
-                </div>
-                <button onclick="closeDevModal()" class="text-slate-400 hover:text-white text-lg">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <p class="text-xs text-slate-300 mb-3">
-                Below is the structured JSON payload processed by your backend API (including lead status classification and lead stitching identifier):
-            </p>
-
-            <div class="bg-slate-950 p-4 rounded-xl font-mono text-xs text-emerald-400 border border-slate-800 overflow-x-auto max-h-80">
-                <pre id="jsonPayloadOutput">Generating JSON payload...</pre>
-            </div>
-
-            <div class="mt-4 p-3 bg-slate-800/80 rounded-xl border border-slate-700 text-xs text-slate-300 space-y-1">
-                <p><strong class="text-amber-400">CS Team Capability:</strong> This lead is automatically downloadable in CS Admin Reports (.CSV) and ready for automated quotation dispatch.</p>
-                <p><strong class="text-blue-400">Backend Stitching:</strong> If user re-enters via Version B after Version A, backend merges using Primary Key `email`/`mobile_number`.</p>
-            </div>
-
-            <div class="mt-5 flex justify-end">
-                <button onclick="closeDevModal()" class="px-5 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs transition-colors">
-                    Close Preview
-                </button>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        // Global State Variable for Version Management ('B' = Full Form, 'A' = Simplified)
-        let currentVersion = 'B';
-        let currentVehicleType = 'car';
-
-        // Version Switcher Handler Function
-        function switchVersion(version) {
-            currentVersion = version;
-
-            const btnA = document.getElementById('btnVersionA');
-            const btnB = document.getElementById('btnVersionB');
-            const fieldsB = document.getElementById('versionBFields');
-            const statusText = document.getElementById('versionStatusText');
-            const vehicleNumberInput = document.getElementById('vehicleNumber');
-            const nricInput = document.getElementById('nricNumber');
-
-            if (version === 'A') {
-                // Style Active Button A
-                btnA.className = "version-badge px-3 py-1.5 rounded-md text-xs font-semibold flex items-center bg-blue-600 text-white shadow-sm";
-                btnB.className = "version-badge px-3 py-1.5 rounded-md text-xs font-semibold flex items-center text-slate-400 hover:text-white";
-
-                // Hide Version B Specific Fields (Vehicle No + NRIC)
-                fieldsB.classList.add('hidden');
-                
-                // Remove required status from hidden inputs
-                vehicleNumberInput.removeAttribute('required');
-                nricInput.removeAttribute('required');
-
-                // Update Status Bar
-                statusText.innerText = "Simplified Flow (Lower Friction / High Lead Volume)";
-                statusText.className = "text-blue-400 font-semibold";
-
-                document.getElementById('savingsEstimateText').innerText = "Estimate unlocked upon phone follow-up";
-
-            } else {
-                // Style Active Button B
-                btnB.className = "version-badge px-3 py-1.5 rounded-md text-xs font-semibold flex items-center bg-emerald-500 text-white shadow-sm";
-                btnA.className = "version-badge px-3 py-1.5 rounded-md text-xs font-semibold flex items-center text-slate-400 hover:text-white";
-
-                // Show Version B Specific Fields
-                fieldsB.classList.remove('hidden');
-
-                // Add required attribute
-                vehicleNumberInput.setAttribute('required', 'required');
-                nricInput.setAttribute('required', 'required');
-
-                // Update Status Bar
-                statusText.innerText = "Direct Channeling (Full Data: Vehicle No + NRIC)";
-                statusText.className = "text-emerald-400 font-semibold";
-
-                calculateSavingsPreview();
-            }
-        }
-
-        // Vehicle Tab Switcher (Car vs Motorcycle)
-        function setVehicleType(type) {
-            currentVehicleType = type;
-            document.getElementById('vehicleTypeInput').value = type;
-
-            const tabCar = document.getElementById('tabCar');
-            const tabMotor = document.getElementById('tabMotor');
-
-            if (type === 'car') {
-                tabCar.className = "py-2.5 px-4 rounded-lg text-xs font-bold flex items-center justify-center space-x-2 transition-all bg-white text-gmat-blue shadow-sm";
-                tabMotor.className = "py-2.5 px-4 rounded-lg text-xs font-bold flex items-center justify-center space-x-2 transition-all text-slate-600 hover:text-slate-900";
-            } else {
-                tabMotor.className = "py-2.5 px-4 rounded-lg text-xs font-bold flex items-center justify-center space-x-2 transition-all bg-white text-gmat-blue shadow-sm";
-                tabCar.className = "py-2.5 px-4 rounded-lg text-xs font-bold flex items-center justify-center space-x-2 transition-all text-slate-600 hover:text-slate-900";
-            }
-            calculateSavingsPreview();
-        }
-
-        // Live Dynamic Savings Calculator Simulation
-        function calculateSavingsPreview() {
-            if (currentVersion === 'A') return;
-
-            const vehicleVal = document.getElementById('vehicleNumber').value.trim();
-            const previewText = document.getElementById('savingsEstimateText');
-
-            if (vehicleVal.length >= 3) {
-                const estimatedOriginal = currentVehicleType === 'car' ? 1200 : 280;
-                const estimatedSavings = Math.round(estimatedOriginal * 0.30);
-                previewText.innerText = `Estimated ~RM${estimatedSavings} Max Savings (30% Off Normal Rates)`;
-            } else {
-                previewText.innerText = "Type vehicle reg no. to calculate exact quote";
-            }
-        }
-
-        // Handle Form Submission & Trigger Developer Preview Payload Modal
-        function handleFormSubmit(e) {
-            e.preventDefault();
-
-            const fullName = document.getElementById('fullName').value;
-            const mobileNumber = document.getElementById('mobileNumber').value;
-            const emailAddress = document.getElementById('emailAddress').value;
-            const newsletterConsent = document.getElementById('newsletterConsent').checked;
-            
-            const isFullVersion = currentVersion === 'B';
-            const vehicleNumber = isFullVersion ? document.getElementById('vehicleNumber').value : null;
-            const nricNumber = isFullVersion ? document.getElementById('nricNumber').value : null;
-
-            // Formulate Payload Object matching technical spec
-            const payload = {
-                event: "LEAD_SUBMISSION_EVENT",
-                landing_page_version: isFullVersion ? "Version_B_FullData" : "Version_A_Simplified",
-                lead_classification: isFullVersion ? "Full Prospect (Ready for Instant Quote)" : "Partial Prospect (Follow-up Required)",
-                user_data: {
-                    full_name: fullName,
-                    mobile_number: "+60" + mobileNumber,
-                    email: emailAddress,
-                    vehicle_type: currentVehicleType,
-                    vehicle_registration_number: vehicleNumber,
-                    nric_number: nricNumber
-                },
-                marketing_consents: {
-                    newsletter_and_lucky_draw_opt_in: newsletterConsent,
-                    pdpa_privacy_accepted: true
-                },
-                backend_processing_rules: {
-                    primary_lookup_key: emailAddress.toLowerCase(),
-                    secondary_lookup_key: "+60" + mobileNumber,
-                    lead_stitching_action: "UPSERT_MATCHING_LEAD",
-                    eligible_for_lucky_draw: true,
-                    eligible_for_tng_voucher: isFullVersion
-                },
-                timestamp: new Date().toISOString()
-            };
-
-            // Display formatted payload inside modal
-            document.getElementById('jsonPayloadOutput').innerText = JSON.stringify(payload, null, 2);
-            document.getElementById('devModal').classList.remove('hidden');
-            document.getElementById('devModal').classList.add('flex');
-        }
-
-        function closeDevModal() {
-            document.getElementById('devModal').classList.add('hidden');
-            document.getElementById('devModal').classList.remove('flex');
-        }
-
-        // Initial setup on window load
-        window.onload = function() {
-            switchVersion('B');
-        }
-    </script>
+</td></tr>
+</table>
 </body>
 </html>

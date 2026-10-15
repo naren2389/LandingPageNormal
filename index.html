@@ -1,146 +1,256 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="x-apple-disable-message-reformatting">
-<meta name="color-scheme" content="light">
-<meta name="supported-color-schemes" content="light">
-<title>Thank you | GMAT</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<!--
-  GMAT CONFIRMATION EMAIL v5 (sent automatically after the landing page form is submitted)
-
-  SUBJECT (pick one to test):
-    A: Thanks {{first_name}}! Share your vehicle details to get started
-    B: {{first_name}}, your insurance comparison is one step away
-
-  MERGE FIELDS: {{first_name}}, {{unsubscribe_url}}
-  ALL GMAT LINKS (logo, Car button, Motorcycle button) carry the GMAT affiliate ref code (ref=34ae4118bd504e00a37d425d0b4f4e60).
-  To use a different ref code for email traffic, find and replace that code in this file (3 places). No utm tags added.
-  Reply-To must be a monitored CS mailbox. Add a response-time promise only once CS confirms what it can keep.
--->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Claim Your RM20 Fuel Voucher | GMAT</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Claim your free RM20 fuel voucher when you sign up with GMAT. Compare car insurance and save up to 30%*. Terms apply.">
+<meta name="theme-color" content="#063f2b" />
 <style>
-  body{margin:0;padding:0;background:#E9F0EC;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
-  table{border-collapse:separate}
-  img{border:0;display:block;outline:none;text-decoration:none}
-  a{color:#067A58}
-  .hd{font-family:'Poppins','Segoe UI','Trebuchet MS',Helvetica,Arial,sans-serif}
-  .bd{font-family:'Inter','Segoe UI',Helvetica,Arial,sans-serif}
-  @media only screen and (max-width:620px){
-    .wrap{width:100%!important}
-    .px{padding-left:22px!important;padding-right:22px!important}
-    .h1{font-size:28px!important;line-height:36px!important}
-    .stack{display:block!important;width:100%!important}
-    .gap{display:block!important;width:100%!important;height:12px!important}
-  }
+:root{
+  --green-950:#073b2a;--green-900:#0a563b;--green-700:#0f8a57;--green-500:#16b874;--green-100:#eaf8f1;
+  --ink:#10231b;--muted:#67766f;--line:#dfe8e3;--soft:#f5f8f6;--white:#fff;--amber:#ffbf3f;--red:#d1495b;
+  --shadow:0 18px 45px rgba(16,35,27,.12);--radius:22px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#edf3ef;color:var(--ink);-webkit-font-smoothing:antialiased}
+button,input{font:inherit} button{cursor:pointer} a{text-decoration:none;color:inherit}
+.app{width:min(100%,480px);margin:0 auto;min-height:100vh;background:var(--white);box-shadow:0 0 60px rgba(7,59,42,.08);position:relative;padding-bottom:92px}
+.topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(223,232,227,.88)}
+.logo{height:34px;width:auto;display:block}.top-actions{display:flex;gap:8px;align-items:center}.icon-btn{width:42px;height:42px;border-radius:14px;border:1px solid var(--line);background:#fff;display:grid;place-items:center}.lang{height:42px;border:1px solid var(--line);background:#fff;border-radius:14px;padding:0 11px;font-size:12px;font-weight:800;color:var(--green-900)}
+.hero{position:relative;overflow:hidden;padding:24px 16px 30px;background:linear-gradient(150deg,#073b2a 0%,#0a563b 58%,#0e7d52 100%);color:white}.hero:before,.hero:after{content:"";position:absolute;border-radius:999px;filter:blur(2px);pointer-events:none}.hero:before{width:210px;height:210px;right:-110px;top:-82px;background:rgba(255,255,255,.08)}.hero:after{width:170px;height:170px;left:-85px;bottom:-90px;background:rgba(255,191,63,.10)}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);font-size:11px;font-weight:800;letter-spacing:.03em}.pulse{width:7px;height:7px;border-radius:50%;background:#71f2aa;box-shadow:0 0 0 5px rgba(113,242,170,.12)}
+.hero h1{margin:13px 0 8px;font-size:31px;line-height:1.04;letter-spacing:-.035em;max-width:390px}.hero h1 span{color:#c9ffdf}.hero p{margin:0;color:#d8ede3;font-size:13.5px;line-height:1.55;max-width:400px}
+.reward-card{margin-top:17px;border-radius:20px;padding:14px;background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.07));border:1px solid rgba(255,255,255,.17);display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.reward-card strong{display:block;font-size:18px;margin:2px 0 3px}.reward-card small{color:#d8ede3;font-size:11px}.reward-badge{width:68px;height:68px;border-radius:20px;background:#fff;color:var(--green-900);display:grid;place-items:center;text-align:center;font-weight:900;line-height:1}.reward-badge b{font-size:23px}.reward-badge span{font-size:9px;letter-spacing:.04em}
+.quick-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.proof{padding:10px 7px;border-radius:15px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);text-align:center}.proof b{display:block;font-size:11px}.proof span{display:block;color:#cfe4da;font-size:9px;margin-top:2px}
+.form-wrap{padding:0 14px;margin-top:-13px;position:relative;z-index:5}.quote-card{background:#fff;border-radius:24px;box-shadow:var(--shadow);border:1px solid #e7eee9;overflow:hidden}.quote-head{padding:15px 16px 12px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.quote-head h2{margin:0;font-size:17px;letter-spacing:-.02em}.quote-head p{margin:4px 0 0;font-size:11px;color:var(--muted)}.step-pill{white-space:nowrap;background:var(--green-100);color:var(--green-900);font-size:10px;font-weight:900;padding:7px 9px;border-radius:999px}
+.progress{height:4px;background:#eef3f0}.progress>span{display:block;height:100%;width:50%;background:linear-gradient(90deg,var(--green-700),var(--green-500));transition:.3s ease}
+.form-body{padding:15px 16px 16px}.vehicle-switch{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;background:var(--soft);border-radius:15px;margin-bottom:14px}.vehicle-switch button{border:0;background:transparent;color:#6d7a73;padding:10px 8px;border-radius:11px;font-size:12px;font-weight:850}.vehicle-switch button.active{background:#fff;color:var(--green-900);box-shadow:0 3px 12px rgba(16,35,27,.08)}
+.field{margin-top:12px}.label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.field label{font-size:11px;font-weight:850}.hint{font-size:9px;color:var(--green-700);font-weight:800}.input-wrap{position:relative}.input-wrap input{width:100%;height:50px;border:1.5px solid var(--line);border-radius:14px;padding:0 13px;background:#fbfdfc;color:var(--ink);outline:none;transition:.2s ease;font-size:14px}.input-wrap input:focus{background:#fff;border-color:var(--green-500);box-shadow:0 0 0 4px rgba(22,184,116,.10)}.field-note{font-size:9.5px;color:var(--muted);line-height:1.45;margin-top:6px}.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.primary{width:100%;height:52px;border:0;border-radius:15px;background:linear-gradient(135deg,#0f8a57,#13b574);color:white;font-weight:900;font-size:13px;margin-top:14px;box-shadow:0 10px 22px rgba(15,138,87,.22);display:flex;align-items:center;justify-content:center;gap:8px}.primary:active{transform:translateY(1px)}.secondary{width:100%;height:46px;border-radius:14px;background:#fff;color:var(--green-900);border:1.5px solid var(--line);font-weight:850;font-size:12px;margin-top:9px}.security{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:11px;color:#75847c;font-size:9.5px}.security b{color:var(--green-700)}
+.step{display:none}.step.active{display:block}.mini-summary{display:flex;justify-content:space-between;gap:10px;padding:11px 12px;border-radius:14px;background:var(--soft);border:1px solid var(--line);margin-bottom:12px}.mini-summary div{font-size:10px;color:var(--muted)}.mini-summary b{display:block;color:var(--ink);font-size:12px;margin-top:2px}
+.section{padding:24px 16px 0}.section-title{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}.section-title h3{font-size:18px;margin:0;letter-spacing:-.02em}.section-title p{margin:0;font-size:10px;color:var(--muted)}
+.logo-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:13px}.partner{height:58px;border:1px solid var(--line);border-radius:16px;background:#fff;display:grid;place-items:center;font-size:12px;font-weight:900;color:#33453c;box-shadow:0 6px 16px rgba(16,35,27,.04)}
+.benefits{display:grid;gap:9px;margin-top:13px}.benefit{display:grid;grid-template-columns:42px 1fr;gap:11px;align-items:start;padding:13px;border:1px solid var(--line);border-radius:17px;background:#fff}.benefit .ico{width:42px;height:42px;border-radius:14px;background:var(--green-100);display:grid;place-items:center;font-size:18px}.benefit h4{margin:1px 0 3px;font-size:13px}.benefit p{margin:0;font-size:10.5px;color:var(--muted);line-height:1.45}
+.reward-section{margin:24px 16px 0;border-radius:22px;background:#10261c;color:white;padding:18px;position:relative;overflow:hidden}.reward-section:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-45px;bottom:-65px;background:rgba(255,191,63,.12)}.reward-section .kicker{font-size:10px;color:#9decc0;font-weight:850;text-transform:uppercase;letter-spacing:.08em}.reward-section h3{font-size:20px;margin:6px 0}.reward-section p{font-size:11px;line-height:1.5;color:#c9d8d0;margin:0;max-width:310px}.reward-points{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.reward-points span{font-size:9.5px;padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1)}
+.faq{margin-top:12px;border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line)}summary{list-style:none;padding:15px 2px;font-size:12px;font-weight:850;display:flex;justify-content:space-between;gap:8px;cursor:pointer}summary::-webkit-details-marker{display:none}details p{margin:-4px 0 15px;font-size:10.5px;line-height:1.5;color:var(--muted)}
+.footer{padding:28px 16px 20px;color:#7b8982;font-size:9.5px;text-align:center}.footer img{height:25px;opacity:.76;margin-bottom:9px}
+.sticky-cta{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,480px);z-index:35;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-top:1px solid var(--line);display:grid;grid-template-columns:48px 1fr;gap:8px}.wa{border:1px solid var(--line);background:#fff;border-radius:14px;font-size:19px}.sticky-cta .primary{margin:0;height:48px}
+.toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,20px);width:min(calc(100% - 28px),452px);background:#10261c;color:white;padding:12px 14px;border-radius:15px;font-size:11px;opacity:0;pointer-events:none;transition:.28s ease;z-index:60;box-shadow:var(--shadow)}.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal{position:fixed;inset:0;z-index:70;background:rgba(5,18,12,.68);display:none;align-items:flex-end;justify-content:center}.modal.show{display:flex}.sheet{width:min(100%,480px);background:#fff;border-radius:26px 26px 0 0;padding:19px 16px calc(20px + env(safe-area-inset-bottom));box-shadow:0 -20px 60px rgba(0,0,0,.16)}.handle{width:42px;height:4px;background:#dfe5e2;border-radius:999px;margin:0 auto 15px}.success{width:52px;height:52px;background:var(--green-100);color:var(--green-700);display:grid;place-items:center;border-radius:16px;font-size:22px}.sheet h3{font-size:20px;margin:12px 0 5px}.sheet p{font-size:11px;color:var(--muted);line-height:1.55}.quote-preview{margin:14px 0;display:grid;gap:8px}.quote-row{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:14px;background:var(--soft);border:1px solid var(--line);font-size:11px}.quote-row b{font-size:12px}.quote-row span{color:var(--green-700);font-weight:900}.close-btn{position:absolute;right:18px;top:18px;border:0;background:#f2f5f3;border-radius:50%;width:36px;height:36px}
+
+.lead-hero{position:relative;overflow:hidden;padding:28px 24px 22px;color:#123526;background:#f8f6ef url("https://www.image2url.com/r2/default/images/1790848547632-a8fbd6a5-7cc8-46ea-a356-2880f67374ce.png") center bottom/cover no-repeat;isolation:isolate}.lead-hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.89) 30%,rgba(255,251,241,.75) 58%,rgba(244,250,245,.64) 100%)}.lead-hero:after{content:"";position:absolute;inset:auto -80px -90px auto;width:260px;height:260px;border-radius:50%;z-index:-1;background:radial-gradient(circle,rgba(24,131,74,.18),rgba(24,131,74,0) 70%)}.lead-hero h1{position:relative;z-index:1;margin:0 0 9px;font-size:34px;line-height:1.06;letter-spacing:-.04em;font-weight:950;color:#163827;text-shadow:0 1px 0 rgba(255,255,255,.7)}.lead-hero h1 .accent{color:#11814a}.lead-hero>p{position:relative;z-index:1;margin:0 0 18px;color:#365b49;font-size:14.5px;line-height:1.52;max-width:390px}.special-card{position:relative;z-index:1;border:1px solid rgba(22,99,53,.18);background:rgba(255,255,255,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:18px;padding:17px 18px;display:grid;grid-template-columns:1fr 96px;align-items:center;min-height:126px;box-shadow:0 12px 26px rgba(27,73,46,.10)}.special-kicker{font-size:11px;font-weight:950;color:#13814a;letter-spacing:.06em}.special-card h2{margin:7px 0 4px;font-size:25px;line-height:1;color:#173c29}.special-card h2 span{color:#c7242b}.special-card p{margin:0;font-size:12.5px;color:#4e695c}.car-line{display:flex;justify-content:center;align-items:center}.car-line svg{width:84px;height:auto;stroke:#13814a;stroke-width:1.8;fill:none;filter:drop-shadow(0 4px 10px rgba(19,129,74,.12))}.lead-benefits{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.lead-benefit{border:1px solid rgba(22,99,53,.15);background:rgba(255,255,255,.84);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:14px;padding:12px 11px;display:grid;grid-template-columns:38px 1fr;gap:9px;align-items:center;box-shadow:0 8px 18px rgba(27,73,46,.07)}.lead-benefit .circle{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:17px}.lead-benefit:nth-child(1) .circle{background:#e1f3e7;color:#14854d}.lead-benefit:nth-child(2) .circle{background:#eaf1ed;color:#1d6b43}.lead-benefit:nth-child(3) .circle{background:#fff3cf;color:#a97800}.lead-benefit:nth-child(4) .circle{background:#edf5ee;color:#2d6d48}.lead-benefit b{display:block;font-size:11.5px;color:#173c29}.lead-benefit span{display:block;margin-top:3px;font-size:9.5px;color:#62786b}.lead-form-wrap{padding:0 8px;background:linear-gradient(180deg,#f6f8f5 0%,#f4f6f8 100%)}.lead-card{background:#fff;border-radius:0 0 24px 24px;padding:20px 24px 24px;box-shadow:0 10px 22px rgba(15,31,61,.13)}.lead-card .field{margin-top:18px}.lead-card .field:first-child{margin-top:0}.lead-card label{font-size:14px;font-weight:900;color:#172d50;text-transform:uppercase;display:block;margin-bottom:8px}.lead-card .req{color:#ef4444}.icon-input{position:relative}.icon-input .ficon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:15px;color:#9ca3af;pointer-events:none}.icon-input input{width:100%;height:56px;border:1.5px solid #cbd5e1;border-radius:13px;background:#f8fafc;padding:0 16px 0 54px;font-size:15px;color:#172d50;outline:none;transition:.2s}.icon-input input:focus{border-color:#0fa477;background:#fff;box-shadow:0 0 0 4px rgba(15,164,119,.1)}.consent-list{display:grid;gap:12px;margin-top:28px}.consent-row{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.45;color:#29415e}.consent-row input{width:18px;height:18px;accent-color:#1687ef;flex:0 0 auto;margin-top:1px}.consent-row a{color:#0074bd;text-decoration:underline}.lead-submit{width:100%;min-height:64px;border:0;border-radius:18px;background:#08a278;color:#fff;font-weight:950;font-size:16px;margin-top:18px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;gap:12px}.lead-submit .gift{color:#ffdf1f;font-size:22px}.lead-security{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:20px;font-size:11px;color:#68778d}.lead-security span:nth-child(1){color:#68778d}.lead-security b{font-weight:500}.lead-note{font-size:10px;color:#8290a3;text-align:center;margin-top:10px}.lead-card-head{text-align:center;margin-bottom:6px}.lead-card-head h2{font-size:18px;margin:0;color:#172d50}.lead-card-head p{font-size:11px;color:#75849a;margin:5px 0 0}.sticky-cta.lead-sticky{grid-template-columns:48px 1fr}.sticky-cta.lead-sticky .primary{background:#08a278}
+@media(min-width:700px){body{padding:22px 0}.app{border-radius:28px;overflow:hidden;min-height:calc(100vh - 44px)}.topbar{top:0}.sticky-cta{bottom:22px;border-radius:0 0 28px 28px}.modal{align-items:center}.sheet{border-radius:26px;max-width:460px}}
+
+/* v5 */
+.wasvg{display:block;width:30px;height:30px;color:#25D366}.wa .wasvg{width:28px;height:28px}.primary .wasvg{display:inline-block;vertical-align:middle;width:22px;height:22px;color:#fff}
+
+.icon-btn,.wa{display:grid;place-items:center}.waimg{display:block;width:26px;height:26px;object-fit:contain}.waimg.sm{display:inline-block;vertical-align:middle;width:22px;height:22px;background:#fff;border-radius:6px;padding:2px}
+
+.partner{padding:8px 14px}.partner img{display:block;max-width:100%;max-height:40px;width:auto;height:auto;object-fit:contain}
+/* v2 fixes */
+.lead-card .consent-row{display:flex;margin:0;font-size:12.5px;font-weight:400;letter-spacing:0;text-transform:none;color:#29415e}
+
+.lead-hero{padding:22px 20px 18px}.lead-hero h1{font-size:30px}.lead-hero>p{font-size:14px;margin-bottom:14px}
+.special-card{min-height:104px;padding:14px 16px}.lead-benefits{margin-top:12px;gap:8px}.lead-benefit{padding:10px}.lead-benefit b{font-size:12.5px}.lead-benefit span{font-size:11px}
+.lead-card label,.lead-card .lbl{font-size:12px;font-weight:800;letter-spacing:.04em;color:#172d50;display:block;margin-bottom:8px}
+.icon-input input{font-size:16px}.ficon{display:grid;place-items:center}.ficon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.icon-input input.bad{border-color:#d1495b;background:#fff7f7}
+.err{display:none;color:#c0392b;font-size:12px;margin-top:6px}.err.show{display:block}
+.consent-row{font-size:12.5px}.consent-list{margin-top:22px}.ack{font-size:11.5px;color:#5b6b80;line-height:1.5;margin:0;background:#f3f8f5;border-radius:12px;padding:10px 12px}
+.lead-security{font-size:12px}.sec{display:inline-flex;align-items:center;gap:6px}.sec svg{width:15px;height:15px;stroke:#08a278;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lead-submit:disabled{opacity:.7}.lead-submit{min-height:58px;font-size:15px}
+.benefit p,.section-title p,.reward-section p,.reward-points span,.footer{font-size:11.5px}details p{font-size:12px}summary{font-size:13px}
+.payimg{margin-top:13px;border:1px solid var(--line);border-radius:16px;padding:10px;background:#fff}.payimg img{display:block;width:100%;height:auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chips span{font-size:12px;font-weight:700;padding:8px 12px;border-radius:999px;background:var(--green-100);color:var(--green-900)}
+a.secondary{display:flex;align-items:center;justify-content:center;text-align:center;padding:0 12px}
+.sticky-cta{transition:transform .25s ease}.sticky-cta.hide{transform:translate(-50%,130%)}
+
+/* v6 */
+.reward-strip{position:relative;z-index:1;margin-top:12px;display:flex;gap:11px;align-items:center;border:1px solid rgba(22,99,53,.18);background:rgba(255,255,255,.88);border-radius:14px;padding:10px 12px}.reward-strip .gift{font-size:22px}.reward-strip b{display:block;font-size:13px;line-height:1.3;color:#173c29}.reward-strip span:not(.gift){display:block;font-size:11px;color:#62786b;margin-top:2px}
+.chip-row{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.chip-row span{font-size:11.5px;font-weight:800;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.88);border:1px solid rgba(22,99,53,.15);color:#173c29}
+.lead-hero{padding-bottom:16px}.lead-hero>p{margin-bottom:6px}
+.hp{position:absolute!important;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.lead-security{margin-top:14px;font-size:12px}.lead-security b{font-weight:600}
+.steps{display:grid;gap:10px;margin-top:13px}.stp{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px;border:1px solid var(--line);border-radius:16px;background:#fff}.stp i{font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--green-100);color:var(--green-700);display:grid;place-items:center;font-weight:900}.stp h4{margin:1px 0 3px;font-size:13.5px}.stp p{margin:0;font-size:12px;color:var(--muted);line-height:1.5}
+.reward-section .tbc{margin-top:12px;font-size:11px;color:#c9d8d0;max-width:none}.reward-section .tbc a{text-decoration:underline;color:#9decc0}
+.plist{margin-top:12px;border-top:1px solid var(--line)}.prow{display:grid;grid-template-columns:28px 1fr;gap:4px 10px;align-items:center;padding:11px 2px;border-bottom:1px solid var(--line)}.prow .pi{font-size:17px}.prow b{font-size:12.5px;font-weight:700}.prow .pl{grid-column:2;display:flex;gap:14px;font-size:11.5px}.prow .pl a{color:var(--green-700);font-weight:700;text-decoration:underline}
+.footer a{text-decoration:underline}
+.sheet .primary{margin-top:16px}
+/* v7 */
+.reward-strip{align-items:flex-start}.reward-strip b{font-size:17px;line-height:1.25}.reward-strip em{display:block;font-style:normal;font-size:13px;line-height:1.4;color:#365b49;margin-top:4px}.reward-strip .gift{font-size:26px;margin-top:2px}
+.plist{margin-top:10px}.prow{grid-template-columns:34px 1fr auto;gap:12px;padding:15px 2px}.prow .pi{font-size:24px;line-height:1}.prow b{font-size:15.5px;font-weight:700}.prow .pl{grid-column:auto;display:inline-block;font-size:14px;font-weight:700;color:var(--green-700);text-decoration:underline;white-space:nowrap}
+/* v8 product cards */
+.plist{display:grid;gap:9px;margin-top:12px;border-top:0}
+a.prow{display:flex;align-items:center;gap:13px;border:1px solid var(--line);border-radius:16px;padding:11px 13px;background:#fff;box-shadow:0 4px 14px rgba(16,35,27,.05);color:inherit;text-decoration:none;grid-template-columns:none}
+a.prow:active{transform:translateY(1px)}a.prow:focus-visible{outline:2px solid var(--green-500);outline-offset:2px}
+a.prow b{flex:1;font-size:15.5px;font-weight:700}
+.prow .tile{width:44px;height:44px;border-radius:13px;background:var(--green-100);display:grid;place-items:center;flex:none}
+.prow .em{font-size:23px;line-height:1;font-family:"Noto Color Emoji","Apple Color Emoji","Segoe UI Emoji",sans-serif}
+.prow .go{width:30px;height:30px;border-radius:50%;background:var(--green-700);display:grid;place-items:center;flex:none}
+.prow .go svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* v7 compact sections */
+.section-title h3{line-height:1.25}
+.logo-strip{grid-template-columns:repeat(4,1fr);gap:7px;margin-top:11px}.logo-strip .partner{height:46px;border-radius:12px;padding:6px 8px}.logo-strip .partner img{max-height:28px}
+.perks{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.perks span{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:12.5px}.perks i{font-style:normal;font-size:15px;font-family:"Noto Color Emoji","Apple Color Emoji","Segoe UI Emoji",sans-serif}.perks b{font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.chips span{padding:8px 14px;border-radius:999px;background:var(--green-100);color:var(--green-700);font-size:12.5px;font-weight:700}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:11px}.pg{display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 6px;border:1px solid var(--line);border-radius:14px;background:#fff;color:inherit;text-decoration:none;text-align:center}.pg:active{transform:translateY(1px)}.pg:focus-visible{outline:2px solid var(--green-500);outline-offset:2px}.pg b{font-size:11.5px;font-weight:700;line-height:1.25}.pg .tile{width:38px;height:38px;border-radius:12px;background:var(--green-100);display:grid;place-items:center}.pg .em{font-size:20px;line-height:1;font-family:"Noto Color Emoji","Apple Color Emoji","Segoe UI Emoji",sans-serif}
+.whylist{display:grid;gap:9px;margin-top:12px}.why{display:flex;align-items:center;gap:13px;padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 4px 14px rgba(16,35,27,.05)}.why b{font-size:14.5px;font-weight:700;line-height:1.3}.why .tile{width:44px;height:44px;border-radius:13px;background:var(--green-100);display:grid;place-items:center;flex:none}.why .em{font-size:23px;line-height:1;font-family:"Noto Color Emoji","Apple Color Emoji","Segoe UI Emoji",sans-serif}
 </style>
 </head>
-<body style="margin:0;padding:0;background:#E9F0EC;">
+<body>
+<div class="app">
+  <header class="topbar">
+    <a href="https://gmat.com.my/?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" rel="noopener" aria-label="GMAT home"><img class="logo" src="https://d9p96y8yn87dz.cloudfront.net/GMATImages/Logo/GMATTransparent.png" alt="GMAT" /></a>
+    <div class="top-actions">
+      <button class="lang" id="langBtn" type="button">EN · BM</button>
+      <a class="icon-btn" href="https://wa.me/60193392408?text=I%27m%20interested%20to%20get%20a%20quote" target="_blank" aria-label="WhatsApp"><svg class="wasvg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+    </div>
+  </header>
 
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
-  Share your vehicle details, compare quotes from leading insurers, and let GMAT look after your renewal.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+  <section class="lead-hero">
+    <h1 data-en='Save Up To <span class="accent">30%*</span> On Car Insurance' data-bm='Jimat Sehingga <span class="accent">30%*</span> Untuk Insurans Kereta'>Save Up To <span class="accent">30%*</span> On Car Insurance</h1>
+    <p data-en="Compare prices from top insurance providers & get the best protection with GMAT." data-bm="Bandingkan harga daripada penyedia insurans terkemuka & dapatkan perlindungan terbaik bersama GMAT.">Compare prices from top insurance providers & get the best protection with GMAT.</p>
+
+    <div class="reward-strip"><span class="gift" aria-hidden="true">🎁</span><div><b data-en="Claim Your FREE RM20 Fuel Voucher!" data-bm="Tuntut Baucar Petrol RM20 PERCUMA Anda!">Claim Your FREE RM20 Fuel Voucher!</b><em data-en="Sign up with GMAT today and get rewarded on your next fill-up." data-bm="Daftar bersama GMAT hari ini dan dapatkan ganjaran pada isian petrol anda yang seterusnya.">Sign up with GMAT today and get rewarded on your next fill-up.</em><span data-en="T&amp;C apply" data-bm="T&amp;C terpakai">T&amp;C apply</span></div></div>
+    <div class="chip-row">
+      <span data-en="Up to 30% savings*" data-bm="Jimat hingga 30%*">Up to 30% savings*</span>
+      <span data-en="Leading insurers" data-bm="Insurer terkemuka">Leading insurers</span>
+      <span data-en="Monthly lucky draw*" data-bm="Cabutan bertuah bulanan*">Monthly lucky draw*</span>
+    </div>
+  </section>
+
+  <section class="lead-form-wrap" id="quote">
+    <div class="lead-card">
+      <div class="lead-card-head"><h2 data-en="Claim Your Free RM20 Fuel Voucher!" data-bm="Tuntut Baucar Petrol RM20 Percuma Anda!">Claim Your Free RM20 Fuel Voucher!</h2><p data-en="Enter your details below to be eligible for a RM20 fuel voucher." data-bm="Masukkan butiran anda di bawah untuk layak mendapat baucar petrol RM20.">Enter your details below to be eligible for a RM20 fuel voucher.</p></div>
+      <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <div class="field"><label for="name"><span data-en="FULL NAME" data-bm="NAMA PENUH">FULL NAME</span> <span class="req">*</span></label><div class="icon-input"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><input id="name" autocomplete="name" placeholder="e.g. Ahmad Razak" aria-describedby="eName" /></div><div class="err" id="eName" data-en="Please enter your full name." data-bm="Sila masukkan nama penuh anda.">Please enter your full name.</div></div>
+      <div class="field"><label for="mobile"><span data-en="MOBILE NUMBER" data-bm="NOMBOR TELEFON">MOBILE NUMBER</span> <span class="req">*</span></label><div class="icon-input"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><input id="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="012-345 6789" aria-describedby="eMobile" /></div><div class="err" id="eMobile" data-en="Enter a valid Malaysian mobile number, e.g. 012-345 6789." data-bm="Masukkan nombor telefon Malaysia yang sah, cth. 012-345 6789.">Enter a valid Malaysian mobile number, e.g. 012-345 6789.</div></div>
+      <div class="field"><label for="email"><span data-en="EMAIL ADDRESS" data-bm="ALAMAT E-MEL">EMAIL ADDRESS</span> <span class="req">*</span></label><div class="icon-input"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><input id="email" type="email" inputmode="email" autocomplete="email" placeholder="e.g. ahmad@example.com" aria-describedby="eEmail" /></div><div class="err" id="eEmail" data-en="Enter a valid email address." data-bm="Masukkan alamat e-mel yang sah.">Enter a valid email address.</div></div>
+      <div class="consent-list">
+        <label class="consent-row"><input type="checkbox" id="pdpaConsent" checked aria-describedby="ePdpa"><span><span data-en="I agree to GMAT Insurtech's" data-bm="Saya bersetuju dengan">I agree to GMAT Insurtech's</span> <a href="https://gmat.com.my/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a> <span data-en="and" data-bm="dan">and</span> <a href="https://gmat.com.my/privacy" target="_blank" rel="noopener">Privacy Policy</a>. <span class="req">*</span></span></label>
+        <div class="err" id="ePdpa" data-en="Please tick this box to continue." data-bm="Sila tanda kotak ini untuk meneruskan.">Please tick this box to continue.</div>
+        <label class="consent-row"><input type="checkbox" id="marketingConsent" checked><span data-en="Yes, email me the newsletter, renewal reminders &amp; offers (optional)." data-bm="Ya, e-melkan saya surat berita, peringatan pembaharuan &amp; tawaran (pilihan).">Yes, email me the newsletter, renewal reminders &amp; offers (optional).</span></label>
+        
+      </div>
+
+      <button class="lead-submit" id="submitBtn" type="button"><span id="submitLbl" data-en="GET MY RM20 FUEL VOUCHER" data-bm="DAPATKAN BAUCAR PETROL RM20">GET MY RM20 FUEL VOUCHER</span><span aria-hidden="true">›</span></button>
+      <div class="lead-security"><b data-en="Free · No obligation to buy · Unsubscribe anytime" data-bm="Percuma · Tiada kewajipan membeli · Boleh berhenti melanggan">Free · No obligation to buy · Unsubscribe anytime</b></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title"><div><p data-en="SIMPLE &amp; QUICK" data-bm="MUDAH &amp; PANTAS">SIMPLE &amp; QUICK</p><h3 data-en="How it works" data-bm="Bagaimana ia berfungsi">How it works</h3></div></div>
+    <div class="steps">
+      <div class="stp"><i>1</i><div><h4 data-en="Share your details" data-bm="Kongsi butiran anda">Share your details</h4><p data-en="Leave your name, mobile and email above. It takes about a minute." data-bm="Tinggalkan nama, telefon dan e-mel anda di atas. Hanya mengambil masa seminit.">Leave your name, mobile and email above. It takes about a minute.</p></div></div>
+      <div class="stp"><i>2</i><div><h4 data-en="Receive your voucher" data-bm="Terima baucar anda">Receive your voucher</h4><p data-en="We will email you the registration confirmation." data-bm="Kami akan e-melkan pengesahan pendaftaran anda.">We will email you the registration confirmation.</p></div></div>
+      <div class="stp"><i>3</i><div><h4 data-en="We look after your renewal" data-bm="Kami uruskan pembaharuan anda">We look after your renewal</h4><p data-en="Sit back and relax. GMAT will track your expiry date and notify you once you proceed with the Car Insurance link in the email sent." data-bm="Duduk santai. GMAT akan menjejak tarikh tamat tempoh anda dan memaklumkan anda sebaik sahaja anda meneruskan pautan Insurans Kereta dalam e-mel yang dihantar.">Sit back and relax. GMAT will track your expiry date and notify you once you proceed with the Car Insurance link in the email sent.</p></div></div>
+    </div>
+  </section>
+  </section>
+
+  <section class="section">
+    <div class="section-title"><div><h3 data-en="WHY GMAT" data-bm="KENAPA GMAT">WHY GMAT</h3></div></div>
+    <div class="whylist">
+      <div class="why"><span class="tile" aria-hidden="true"><span class="em">🏢</span></span><b data-en="Choose from any leading insurer or takaful in Malaysia" data-bm="Pilih mana-mana insurer atau takaful terkemuka di Malaysia">Choose from any leading insurer or takaful in Malaysia</b></div>
+      <div class="why"><span class="tile" aria-hidden="true"><span class="em">🛟</span></span><b data-en="More than just a price" data-bm="Lebih daripada sekadar harga">More than just a price</b></div>
+      <div class="why"><span class="tile" aria-hidden="true"><span class="em">💳</span></span><b data-en="Flexible payment options" data-bm="Pilihan pembayaran fleksibel">Flexible payment options</b></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title"><div><p data-en="MORE FROM GMAT" data-bm="LEBIH DARIPADA GMAT">MORE FROM GMAT</p><h3 data-en="Other GMAT products" data-bm="Produk GMAT lain">Other GMAT products</h3></div></div>
+    <div class="pgrid">
+<a class="pg" href="https://gmat.com.my/vehicle-insurance/home?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" rel="noopener"><span class="tile" aria-hidden="true"><span class="em">🚗</span></span><b data-en="Car insurance" data-bm="Insurans kereta">Car insurance</b></a>
+<a class="pg" href="https://gmat.com.my/motor-cycle/home?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" rel="noopener"><span class="tile" aria-hidden="true"><span class="em">🏍️</span></span><b data-en="Motorcycle insurance" data-bm="Insurans motosikal">Motorcycle insurance</b></a>
+<a class="pg" href="https://gmat.com.my/hikers/home?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" rel="noopener"><span class="tile" aria-hidden="true"><span class="em">🥾</span></span><b data-en="Hikers Personal Accident" data-bm="Kemalangan Diri Pendaki">Hikers Personal Accident</b></a>
+<a class="pg" href="https://gmat.com.my/tenang/home?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" rel="noopener"><span class="tile" aria-hidden="true"><span class="em">🛡️</span></span><b data-en="Perlindungan Tenang" data-bm="Perlindungan Tenang">Perlindungan Tenang</b></a>
+<a class="pg" href="https://gmat.com.my/maid/home?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" rel="noopener"><span class="tile" aria-hidden="true"><span class="em">🏠</span></span><b data-en="Maid insurance" data-bm="Insurans pembantu rumah">Maid insurance</b></a>
+<a class="pg" href="https://gmat.com.my/bicycle/home?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" rel="noopener"><span class="tile" aria-hidden="true"><span class="em">🚲</span></span><b data-en="Bicycle insurance" data-bm="Insurans basikal">Bicycle insurance</b></a>
+    </div>
+  </section>
+
+  <footer class="footer"><a href="https://gmat.com.my/?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" rel="noopener"><img src="https://d9p96y8yn87dz.cloudfront.net/GMATImages/Logo/GMATTransparent.png" alt="GMAT" /></a><div>© 2026 GMAT Insurtech. All rights reserved.</div><div style="margin-top:5px"><a href="https://gmat.com.my/privacy" target="_blank" rel="noopener">Privacy</a> · <a href="https://gmat.com.my/terms" target="_blank" rel="noopener">Terms</a> · <a href="mailto:gcare@gmat.com.my">Contact</a></div></footer>
+
+  <div class="sticky-cta lead-sticky"><a class="wa" href="https://wa.me/60193392408?text=I%27m%20interested%20to%20get%20a%20quote" target="_blank" aria-label="WhatsApp"><svg class="wasvg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a><button class="primary" id="stickyQuote" type="button"><span data-en="GET MY RM20 FUEL VOUCHER" data-bm="DAPATKAN BAUCAR PETROL RM20">GET MY RM20 FUEL VOUCHER</span> →</button></div>
 </div>
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#E9F0EC;">
-<tr><td align="center" style="padding:28px 12px;">
+<div class="toast" id="toast" role="status" aria-live="polite">Please complete the highlighted details.</div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="sheet" style="position:relative;text-align:center">
+    <button class="close-btn" id="closeModal" aria-label="Close">×</button><div class="handle"></div><div class="success" style="margin:6px auto 0">✓</div>
+    <h3 id="mTitle" data-en="Thank you!" data-bm="Terima kasih!">Thank you!</h3>
+    <p data-en="We have received your request. Please check your email for the next step. If you don't see it, check your spam folder." data-bm="Kami telah menerima permintaan anda. Sila semak e-mel anda untuk langkah seterusnya. Jika tiada, semak folder spam.">We have received your request. Please check your email for the next step. If you don't see it, check your spam folder.</p>
+    <button class="primary" id="doneBtn" type="button"><span data-en="CLOSE" data-bm="TUTUP">CLOSE</span></button>
+  </div>
+</div>
+<script>
+/* ===== GMAT lead page v6 (demo) ===== */
+const CONFIG={
+  ENDPOINT:'',            // paste your Google Apps Script web app URL here (ends with /exec)
+  GTM_ID:'',              // leave empty for demo. e.g. 'GTM-XXXXXXX' (use a SEPARATE test container, not the production one)
+  PAGE_VERSION:'A',
+  CONSENT_TEXT_VERSION:'v1',
+  MIN_FILL_MS:3000        // forms submitted faster than this are treated as bots
+};
+window.dataLayer=window.dataLayer||[];
+if(CONFIG.GTM_ID){(function(w,d,s,l,i){w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f)})(window,document,'script','dataLayer',CONFIG.GTM_ID)}
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+let lang='en',sending=false;const loadedAt=Date.now();
 
-  <table role="presentation" class="wrap" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;">
+/* ---- traffic source capture (first touch + last touch) ---- */
+const TRK_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid','ttclid'];
+function readTouch(){const q=new URLSearchParams(location.search),t={};TRK_KEYS.forEach(k=>{if(q.get(k))t[k]=q.get(k)});t.referrer=document.referrer||'';t.landing=location.origin+location.pathname;t.ts=new Date().toISOString();return t}
+function store(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function load(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}}
+const cur=readTouch();const hasTrk=TRK_KEYS.some(k=>cur[k])||!!cur.referrer;
+let firstTouch=load('gmat_first_touch');if(!firstTouch){firstTouch=cur;store('gmat_first_touch',firstTouch)}
+let lastTouch=load('gmat_last_touch')||cur;if(hasTrk){lastTouch=cur;store('gmat_last_touch',lastTouch)}
+function sourceLabel(t){if(t.utm_source)return t.utm_source;if(t.gclid)return 'google_ads';if(t.fbclid)return 'meta';if(t.ttclid)return 'tiktok';if(t.referrer){try{return new URL(t.referrer).hostname}catch(e){}}return 'direct'}
+window.dataLayer.push({event:'landing_view',page_version:CONFIG.PAGE_VERSION,traffic_source:sourceLabel(lastTouch),utm_medium:lastTouch.utm_medium||'',utm_campaign:lastTouch.utm_campaign||''});
 
-    <!-- Logo bar -->
-    <tr><td class="px" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:20px 20px 0 0;padding:24px 40px 20px 40px;">
-      <a href="https://gmat.com.my/?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" style="text-decoration:none;">
-        <img src="https://d9p96y8yn87dz.cloudfront.net/GMATImages/Logo/GMATTransparent.png" alt="GMAT" width="150" style="width:150px;height:auto;margin:0 auto;font:700 22px Arial,Helvetica,sans-serif;color:#063F2B;">
-      </a>
-    </td></tr>
+const MSG={fix:['Please check the highlighted fields.','Sila semak ruangan yang ditanda.'],fail:['Could not send. Please try again.','Gagal menghantar. Sila cuba lagi.'],sending:['SENDING…','MENGHANTAR…']};
+const say=k=>MSG[k][lang==='en'?0:1];
+function showToast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
+function setLang(l){lang=l;document.documentElement.lang=l==='bm'?'ms':'en';$$('[data-en]').forEach(el=>{el.innerHTML=el.dataset[l]});$('#langBtn').textContent=l==='en'?'EN · BM':'BM · EN'}
+function normMobile(v){let d=v.replace(/[\s\-()]/g,'').replace(/^\+/,'');if(d.startsWith('60'))d=d.slice(2);if(d.startsWith('0'))d=d.slice(1);return /^1\d{8,9}$/.test(d)?'+60'+d:null}
+function flag(id,eid,bad){$('#'+id).classList.toggle('bad',bad);$('#'+id).setAttribute('aria-invalid',bad);$('#'+eid).classList.toggle('show',bad)}
+const uid=()=>crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(16).slice(2);
+function setBusy(b){sending=b;$('#submitBtn').disabled=b;$('#submitLbl').textContent=b?say('sending'):$('#submitLbl').dataset[lang]}
+async function submitLead(){
+  if(sending)return;
+  const name=$('#name').value.trim(),mob=normMobile($('#mobile').value),email=$('#email').value.trim();
+  const ok={n:name.length>=3,m:!!mob,e:/^\S+@\S+\.\S+$/.test(email),p:$('#pdpaConsent').checked};
+  flag('name','eName',!ok.n);flag('mobile','eMobile',!ok.m);flag('email','eEmail',!ok.e);$('#ePdpa').classList.toggle('show',!ok.p);
+  if(!(ok.n&&ok.m&&ok.e&&ok.p)){(document.querySelector('.icon-input .bad')||$('#pdpaConsent')).focus();showToast(say('fix'));return}
+  // basic spam protection: hidden field filled or form completed too fast -> pretend success, send nothing
+  if($('#website').value||Date.now()-loadedAt<CONFIG.MIN_FILL_MS){setBusy(true);setTimeout(openModal,600);return}
+  const id=uid();
+  const payload={lead_id:id,page_version:CONFIG.PAGE_VERSION,full_name:name,mobile_number:mob,email:email,
+    marketing_opt_in:$('#marketingConsent').checked,pdpa_consent:true,consent_text_version:CONFIG.CONSENT_TEXT_VERSION,language:lang,
+    device:/Mobi|Android|iPhone/i.test(navigator.userAgent)?'Mobile':'Desktop',submitted_at:new Date().toISOString(),
+    first_touch:firstTouch,last_touch:lastTouch,source_label:sourceLabel(lastTouch)};
+  setBusy(true);
+  try{
+    if(CONFIG.ENDPOINT){await fetch(CONFIG.ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})}
+    else console.log('GMAT lead payload (no ENDPOINT set):',payload);
+  }catch(e){setBusy(false);showToast(say('fail'));return}
+  // analytics: no personal data
+  window.dataLayer.push({event:'generate_lead',page_version:CONFIG.PAGE_VERSION,lead_id:id,marketing_opt_in:payload.marketing_opt_in,language:lang,traffic_source:payload.source_label,utm_medium:lastTouch.utm_medium||'',utm_campaign:lastTouch.utm_campaign||'',gclid_present:!!lastTouch.gclid});
+  openModal();
+}
+function openModal(){$('#modal').classList.add('show');$('#doneBtn').focus()}
+function closeModal(){$('#modal').classList.remove('show');setBusy(false);$('#submitBtn').focus()}
+$('#submitBtn').addEventListener('click',submitLead);
+$$('#quote input').forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter'&&i.type!=='checkbox'){e.preventDefault();submitLead()}}));
+$('#closeModal').addEventListener('click',closeModal);$('#doneBtn').addEventListener('click',closeModal);
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#modal').classList.contains('show'))closeModal()});
+$('#stickyQuote').addEventListener('click',()=>$('#quote').scrollIntoView({behavior:'smooth',block:'start'}));
+$('#langBtn').addEventListener('click',()=>setLang(lang==='en'?'bm':'en'));
+if('IntersectionObserver' in window)new IntersectionObserver(([e])=>$('.sticky-cta').classList.toggle('hide',e.isIntersecting),{threshold:.2}).observe($('.lead-card'));
 
-    <!-- Poster (replaces the green hero band) -->
-    <tr><td bgcolor="#063F2B" style="background:#063F2B;padding:0;line-height:0;font-size:0;">
-      <img src="https://www.image2url.com/r2/default/images/1791200793805-33ab8bc5-8a7f-431b-a7d3-4c8f4ea51dd8.png" width="600" alt="Save up to 30% on car and motorcycle insurance. Renew with GMAT and get a RM30 eWallet PIN or fuel voucher. Monthly lucky draw. Terms and conditions apply." style="display:block;width:100%;max-width:600px;height:auto;border:0;">
-    </td></tr>
-
-    <!-- CTA card -->
-    <tr><td class="px" bgcolor="#FFFFFF" style="background:#FFFFFF;padding:34px 40px 8px 40px;">
-      <p class="bd" style="margin:0 0 8px 0;font-size:15px;line-height:23px;color:#4A5C55;">Thank you, <strong style="color:#0F2A22;">{{first_name}}</strong>! We've received your request.</p>
-      <p class="hd" style="margin:0;font-size:22px;line-height:30px;font-weight:700;color:#0F2A22;">Share your vehicle details</p>
-      <p class="bd" style="margin:6px 0 20px 0;font-size:15px;line-height:23px;color:#4A5C55;">Choose your vehicle to get started.</p>
-
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="stack" width="49%" valign="top">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-              <td align="center" bgcolor="#067A58" style="border-radius:14px;">
-                <a href="https://gmat.com.my/vehicle-insurance/home?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" class="hd" style="display:block;padding:18px 12px;font-size:16px;line-height:20px;font-weight:600;color:#FFFFFF;text-decoration:none;border-radius:14px;">Car insurance &rarr;</a>
-              </td></tr></table>
-          </td>
-          <td class="gap" width="2%" style="font-size:0;line-height:0;">&nbsp;</td>
-          <td class="stack" width="49%" valign="top">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-              <td align="center" bgcolor="#FFC93C" style="border-radius:14px;">
-                <a href="https://gmat.com.my/motor-cycle/home?ref=34ae4118bd504e00a37d425d0b4f4e60" target="_blank" class="hd" style="display:block;padding:18px 12px;font-size:16px;line-height:20px;font-weight:600;color:#1B2B25;text-decoration:none;border-radius:14px;">Motorcycle insurance &rarr;</a>
-              </td></tr></table>
-          </td>
-        </tr>
-      </table>
-    </td></tr>
-
-    <!-- Steps -->
-    <tr><td class="px" bgcolor="#FFFFFF" style="background:#FFFFFF;padding:34px 40px 8px 40px;">
-      <p class="hd" style="margin:0 0 18px 0;font-size:20px;line-height:28px;font-weight:700;color:#0F2A22;">How it works</p>
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td width="48" valign="top" style="padding:0 0 18px 0;"><div class="hd" style="width:36px;height:36px;line-height:36px;border-radius:18px;background:#E3F4EB;color:#067A58;text-align:center;font-size:16px;font-weight:700;">1</div></td>
-          <td valign="top" class="bd" style="padding:0 0 18px 0;">
-            <p class="hd" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#0F2A22;">Enter your vehicle details</p>
-            <p style="margin:2px 0 0 0;font-size:14px;line-height:22px;color:#4A5C55;">Fill in your details on our car or motorcycle page.</p>
-          </td>
-        </tr>
-        <tr>
-          <td width="48" valign="top" style="padding:0 0 18px 0;"><div class="hd" style="width:36px;height:36px;line-height:36px;border-radius:18px;background:#E3F4EB;color:#067A58;text-align:center;font-size:16px;font-weight:700;">2</div></td>
-          <td valign="top" class="bd" style="padding:0 0 18px 0;">
-            <p class="hd" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#0F2A22;">Compare your quotes</p>
-            <p style="margin:2px 0 0 0;font-size:14px;line-height:22px;color:#4A5C55;">See prices from leading insurers and pick the cover that suits you.</p>
-          </td>
-        </tr>
-        <tr>
-          <td width="48" valign="top" style="padding:0;"><div class="hd" style="width:36px;height:36px;line-height:36px;border-radius:18px;background:#E3F4EB;color:#067A58;text-align:center;font-size:16px;font-weight:700;">3</div></td>
-          <td valign="top" class="bd" style="padding:0;">
-            <p class="hd" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#0F2A22;">We look after your renewal</p>
-            <p style="margin:2px 0 0 0;font-size:14px;line-height:22px;color:#4A5C55;">GMAT will follow up and remind you when your policy is due, so you never miss it.</p>
-          </td>
-        </tr>
-      </table>
-    </td></tr>
-
-    <!-- Rewards -->
-    <tr><td class="px" bgcolor="#FFFFFF" style="background:#FFFFFF;padding:30px 40px 6px 40px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr><td bgcolor="#FFF4D6" style="background:#FFF4D6;border-radius:16px;padding:20px 22px;">
-          <p class="hd" style="margin:0 0 8px 0;font-size:16px;line-height:24px;font-weight:700;color:#5A3E00;">Renew with GMAT and get rewarded</p>
-          <p class="bd" style="margin:0;font-size:14px;line-height:23px;color:#5A4A1F;">&#8226;&nbsp; <strong>RM30 eWallet PIN or fuel voucher</strong> when you renew with us*<br>&#8226;&nbsp; Eligible customers are entered into our <strong>monthly lucky draw</strong>*</p>
-          <p class="bd" style="margin:10px 0 0 0;font-size:12px;line-height:18px;color:#7A6A3A;">*Terms and conditions apply. <a href="https://gmat.com.my/terms" target="_blank" style="color:#7A5A00;">Read the T&amp;C</a></p>
-        </td></tr>
-      </table>
-    </td></tr>
-
-    <!-- Sign-off -->
-    <tr><td class="px bd" bgcolor="#FFFFFF" style="background:#FFFFFF;padding:28px 40px 34px 40px;border-radius:0 0 20px 20px;">
-      <p style="margin:0;font-size:15px;line-height:24px;color:#33463F;">Have a question? Simply reply to this email or write to <a href="mailto:gcare@gmat.com.my" style="color:#067A58;font-weight:600;text-decoration:none;">gcare@gmat.com.my</a> and our team will help.</p>
-      <p style="margin:14px 0 0 0;font-size:15px;line-height:24px;color:#33463F;">Thank you for choosing GMAT,<br><strong class="hd" style="font-weight:600;color:#0F2A22;">Team GMAT</strong></p>
-    </td></tr>
-
-    <!-- Footer -->
-    <tr><td class="px bd" align="center" style="padding:22px 30px 6px 30px;font-size:12px;line-height:19px;color:#6A7A74;">
-      You received this email because you requested an insurance quote at gmat.com.my.<br>
-      <a href="https://gmat.com.my/privacy" target="_blank" style="color:#6A7A74;">Privacy Policy</a> &nbsp;|&nbsp;
-      <a href="https://gmat.com.my/terms" target="_blank" style="color:#6A7A74;">Terms &amp; Conditions</a> &nbsp;|&nbsp;
-      <a href="{{unsubscribe_url}}" target="_blank" style="color:#6A7A74;">Unsubscribe</a><br>
-      <span style="display:block;margin-top:8px;">&copy; 2026 GMAT Insurtech. All rights reserved.</span>
-    </td></tr>
-
-  </table>
-
-</td></tr>
-</table>
+</script>
 </body>
 </html>
